@@ -566,6 +566,10 @@ Turns on debugging messages. Argument is interpreted as a mask:
 nokeep;
 lB	l.
 0x01  Parser information
+0x02  Summary of netlink messages
+0x04  Hex dump of sent netlink messages
+0x08  Hex dump of received netlink messages
+0x10  Structure of netlink messages
 .TE
 .TP
 .BI \-\-json
