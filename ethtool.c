@@ -6041,6 +6041,7 @@ static const struct option args[] = {
 	},
 	{
 		.opts	= "--show-eee",
+		.json	= true,
 		.func	= do_geee,
 		.nlfunc	= nl_geee,
 		.help	= "Show EEE settings",
