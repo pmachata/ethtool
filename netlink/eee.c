@@ -69,19 +69,19 @@ int eee_reply_cb(const struct nlmsghdr *nlhdr, void *data)
 	ret = dump_link_modes(nlctx, tb[ETHTOOL_A_EEE_MODES_OURS], true,
 			      LM_CLASS_REAL,
 			      "Supported EEE link modes:  ", NULL, "\n",
-			      "Not reported");
+			      "Not reported", "supported-eee-link-modes");
 	if (ret < 0)
 		return err_ret;
 	ret = dump_link_modes(nlctx, tb[ETHTOOL_A_EEE_MODES_OURS], false,
 			      LM_CLASS_REAL,
 			      "Advertised EEE link modes:  ", NULL, "\n",
-			      "Not reported");
+			      "Not reported", "advertised-eee-link-modes");
 	if (ret < 0)
 		return err_ret;
 	ret = dump_link_modes(nlctx, tb[ETHTOOL_A_EEE_MODES_PEER], false,
 			      LM_CLASS_REAL,
 			      "Link partner advertised EEE link modes:  ", NULL,
-			      "\n", "Not reported");
+			      "\n", "Not reported", "link-partner-advertised-eee-link-modes");
 	if (ret < 0)
 		return err_ret;
 
