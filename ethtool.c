@@ -4261,6 +4261,8 @@ static int do_srxfh(struct cmd_context *ctx)
 			++arg_num;
 		} else if (!strcmp(ctx->argp[arg_num], "xfrm")) {
 			++arg_num;
+			if (!ctx->argp[arg_num])
+				exit_bad_args();
 			if (!strcmp(ctx->argp[arg_num], "symmetric-xor"))
 				req_input_xfrm = RXH_XFRM_SYM_XOR;
 			else if (!strcmp(ctx->argp[arg_num], "none"))
@@ -4270,6 +4272,8 @@ static int do_srxfh(struct cmd_context *ctx)
 			++arg_num;
 		} else if (!strcmp(ctx->argp[arg_num], "context")) {
 			++arg_num;
+			if (!ctx->argp[arg_num])
+				exit_bad_args();
 			if(!strcmp(ctx->argp[arg_num], "new"))
 				rss_context = ETH_RXFH_CONTEXT_ALLOC;
 			else
