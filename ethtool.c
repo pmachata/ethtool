@@ -70,6 +70,18 @@ static void exit_bad_args(void)
 	exit(1);
 }
 
+static void exit_bad_args_info(const char *info) __attribute__((noreturn));
+
+static void exit_bad_args_info(const char *info)
+{
+	fprintf(stderr,
+		"ethtool: bad command line argument(s)\n"
+		"%s\n"
+		"For more information run ethtool -h\n",
+		info);
+	exit(1);
+}
+
 static void exit_nlonly_param(const char *name) __attribute__((noreturn));
 
 static void exit_nlonly_param(const char *name)
@@ -6562,13 +6574,13 @@ int main(int argc, char **argp)
 			exit_bad_args();
 	}
 	if (ctx.json && !args[k].json)
-		exit_bad_args();
+		exit_bad_args_info("JSON output not available for this subcommand");
 	ctx.argc = argc;
 	ctx.argp = argp;
 	netlink_run_handler(&ctx, args[k].nlchk, args[k].nlfunc, !args[k].func);
 
 	if (ctx.json) /* no IOCTL command supports JSON output */
-		exit_bad_args();
+		exit_nlonly_param("--json");
 
 	ret = ioctl_init(&ctx, args[k].no_dev);
 	if (ret)
