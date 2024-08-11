@@ -191,6 +191,17 @@
 #define CMIS_SIG_INTEG_TX_OFFSET		0xA1
 #define CMIS_SIG_INTEG_RX_OFFSET		0xA2
 
+/* CDB Messaging Support Advertisement */
+#define CMIS_CDB_ADVER_OFFSET			0xA3
+#define CMIS_CDB_ADVER_INSTANCES_MASK		0xC0
+#define CMIS_CDB_ADVER_MODE_MASK		0x20
+#define CMIS_CDB_ADVER_EPL_MASK			0x0F
+
+#define CMIS_CDB_ADVER_RW_LEN_OFFSET		0xA4
+
+#define CMIS_CDB_ADVER_TRIGGER_OFFSET		0xA5
+#define CMIS_CDB_ADVER_TRIGGER_MASK		0x80
+
 /*-----------------------------------------------------------------------
  * Upper Memory Page 0x02: Optional Page that informs about module-defined
  * thresholds for module-level and lane-specific threshold crossing monitors.
