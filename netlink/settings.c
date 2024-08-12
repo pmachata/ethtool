@@ -527,7 +527,7 @@ int linkmodes_reply_cb(const struct nlmsghdr *nlhdr, void *data)
 		uint32_t val = mnl_attr_get_u32(tb[ETHTOOL_A_LINKMODES_LANES]);
 
 		print_banner(nlctx);
-		print_uint(PRINT_ANY, "lanes", "\tLanes: %s\n", val);
+		print_uint(PRINT_ANY, "lanes", "\tLanes: %u\n", val);
 	}
 	if (tb[ETHTOOL_A_LINKMODES_DUPLEX]) {
 		uint8_t val = mnl_attr_get_u8(tb[ETHTOOL_A_LINKMODES_DUPLEX]);
