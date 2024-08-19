@@ -519,6 +519,7 @@ static void init_global_link_mode_masks(void)
 		ETHTOOL_LINK_MODE_10baseT1S_Full_BIT,
 		ETHTOOL_LINK_MODE_10baseT1S_Half_BIT,
 		ETHTOOL_LINK_MODE_10baseT1S_P2MP_Half_BIT,
+		ETHTOOL_LINK_MODE_10baseT1BRR_Full_BIT,
 	};
 	static const enum ethtool_link_mode_bit_indices
 		additional_advertised_flags_bits[] = {
@@ -779,6 +780,8 @@ static void dump_link_caps(const char *prefix, const char *an_prefix,
 		  "10baseT1S/Half" },
 		{ 0, ETHTOOL_LINK_MODE_10baseT1S_P2MP_Half_BIT,
 		  "10baseT1S/Half" },
+		{ 0, ETHTOOL_LINK_MODE_10baseT1BRR_Full_BIT,
+		  "10baseT1BRR/Full" },
 	};
 	int indent;
 	int did1, new_line_pend;

@@ -177,6 +177,7 @@ static const struct link_mode_info link_modes[] = {
 	[ETHTOOL_LINK_MODE_10baseT1S_Full_BIT]		= __REAL(10),
 	[ETHTOOL_LINK_MODE_10baseT1S_Half_BIT]		= __HALF_DUPLEX(10),
 	[ETHTOOL_LINK_MODE_10baseT1S_P2MP_Half_BIT]	= __HALF_DUPLEX(10),
+	[ETHTOOL_LINK_MODE_10baseT1BRR_Full_BIT]	= __REAL(10),
 };
 const unsigned int link_modes_count = ARRAY_SIZE(link_modes);
 
