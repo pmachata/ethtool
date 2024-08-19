@@ -536,6 +536,13 @@ ethtool \- query or control network driver and hardware settings
 .I devname
 .RB [ podl\-pse\-admin\-control
 .BR enable | disable ]
+.HP
+.B ethtool \-\-flash\-module\-firmware
+.I devname
+.BI file
+.IR FILE
+.RB [ pass
+.IR PASS ]
 .
 .\" Adjust lines (i.e. full justification) and hyphenate.
 .ad
@@ -1771,6 +1778,28 @@ Set Power Sourcing Equipment (PSE) parameters.
 .A2 podl-pse-admin-control \ enable disable
 This parameter manages PoDL PSE Admin operations in accordance with the IEEE
 802.3-2018 30.15.1.2.1 (acPoDLPSEAdminControl) specification.
+
+.RE
+.TP
+.B \-\-flash\-module\-firmware
+Flash the transceiver module's firmware. The firmware update process is
+composed from three logical steps. Downloading a firmware image to the
+transceiver module, running the image and committing the image so that it is
+run upon reset. When flash command is given, the firmware update process is
+performed in its entirety in that order.
+.RS 4
+.TP
+.BI file \ FILE
+Specifies the filename of the transceiver module firmware image. The firmware
+must first be installed in one of the directories where the kernel firmware
+loader or firmware agent will look, such as /lib/firmware. The firmware image
+is downloaded to the transceiver module, validated, run and committed.
+.RE
+.RS 4
+.TP
+.BI pass \ PASS
+Optional transceiver module password that might be required as part of the
+transceiver module firmware update process.
 
 .SH BUGS
 Not supported (in part or whole) on all network drivers.
