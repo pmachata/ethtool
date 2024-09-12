@@ -137,6 +137,9 @@ ethtool \- query or control network driver and hardware settings
 .BN --debug
 .I args
 .HP
+.B ethtool [--disable-netlink]
+.I args
+.HP
 .B ethtool [--json]
 .I args
 .HP
@@ -580,6 +583,9 @@ lB	l.
 0x08  Hex dump of received netlink messages
 0x10  Structure of netlink messages
 .TE
+.TP
+.BI \-\-disable-netlink
+Do not use netlink and fall back to the ioctl interface if possible.
 .TP
 .BI \-\-json
 Output results in JavaScript Object Notation (JSON). Only a subset of
