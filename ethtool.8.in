@@ -1791,7 +1791,6 @@ status depend on internal PSE state machine and automatic PD classification
 support. It corresponds to IEEE 802.3-2022 30.9.1.1.5
 (aPSEPowerDetectionStatus) with potential values being
 .B disabled, searching, delivering power, test, fault, other fault
-.RE
 
 .RE
 .TP
