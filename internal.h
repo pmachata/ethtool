@@ -281,6 +281,7 @@ int test_fclose(FILE *fh);
 #endif
 #endif
 
+int ioctl_init(struct cmd_context *ctx, bool no_dev);
 int send_ioctl(struct cmd_context *ctx, void *cmd);
 
 void dump_hex(FILE *f, const u8 *data, int len, int offset);

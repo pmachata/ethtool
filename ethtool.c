@@ -6480,7 +6480,7 @@ static int do_perqueue(struct cmd_context *ctx)
 	return 0;
 }
 
-static int ioctl_init(struct cmd_context *ctx, bool no_dev)
+int ioctl_init(struct cmd_context *ctx, bool no_dev)
 {
 	if (no_dev) {
 		ctx->fd = -1;
